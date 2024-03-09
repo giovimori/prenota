@@ -1,0 +1,34 @@
+@model prenota.Models.Utente
+
+@{
+    ViewData["Title"] = "Prenota";
+}
+
+<h2>Modulo di prenotazione</h2>
+<p>Riempi i seguenti campi e registrati nel nostro sito</p>
+<form asp-controller="Home" asp-action="Prenotato" method="post">
+    <div class="form-group">
+        <label asp-for="Nome"></label>
+        <input type="text" asp-for="Nome" class="form-control" />
+        <span asp-validation-for="Nome" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Cognome"></label>
+        <input type="text" asp-for="Cognome" class="form-control" />
+        <span asp-validation-for="Cognome" />
+    </div>
+    <div class="form-group">
+        <label asp-for="EMail"></label>
+        <input type="text" asp-for="EMail" class="form-control" />
+        <span asp-validation-for="EMail" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Citta"></label>
+        <textarea asp-for="Citta" class="form-control"></textarea>
+        <span asp-validation-for="Citta" />
+    </div>
+    <div class="form-group">
+        <div asp-validation-summary="All"></div>
+        <button type="submit" class="btn btn-primary btn-lg"><i class="glyphicon glyphicon-send"></i>Prenota!</button>
+    </div>
+</form>
